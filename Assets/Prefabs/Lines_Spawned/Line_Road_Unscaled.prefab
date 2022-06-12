@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 5888681027262276174}
   - component: {fileID: 7082686705766112721}
   - component: {fileID: 4784699063557335653}
+  - component: {fileID: 3774846736472412417}
   m_Layer: 0
   m_Name: Line_Road_Unscaled
   m_TagString: Untagged
@@ -446,6 +447,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e90e92a5d732184aadfe1c7c48cc76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3774846736472412417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166706617698935497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bbd758d198b2224690f72f048326672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPrefab:
+  - {fileID: 5410085814246475184, guid: 18dab3c4944f5064493f2756d7813421, type: 3}
+  - {fileID: 3919924562506934723, guid: 2480e7d6b3b200d48b185930b2cf83d8, type: 3}
+  - {fileID: 5802676384410343513, guid: ed7fc004cf4a64940ba04e699adb2922, type: 3}
+  initialSpawnOffsetRange: {x: 10, y: 15}
+  initialCount: 3
+  spawnOffsetX: 30
+  minDelay: 3
+  maxDelay: 5
 --- !u!1 &7458090480420739105
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +480,6 @@ GameObject:
   - component: {fileID: 6753598739294824712}
   - component: {fileID: 1795184175218127563}
   - component: {fileID: 6762969863880307859}
-  - component: {fileID: 1840915925104978618}
   - component: {fileID: 6006647750176828816}
   m_Layer: 0
   m_Name: Line_Road
@@ -544,27 +565,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1840915925104978618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7458090480420739105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbd758d198b2224690f72f048326672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carPrefab:
-  - {fileID: 5410085814246475184, guid: 18dab3c4944f5064493f2756d7813421, type: 3}
-  - {fileID: 3919924562506934723, guid: 2480e7d6b3b200d48b185930b2cf83d8, type: 3}
-  - {fileID: 5802676384410343513, guid: ed7fc004cf4a64940ba04e699adb2922, type: 3}
-  initialSpawnOffsetRange: {x: 10, y: 15}
-  initialCount: 3
-  spawnOffsetX: 30
-  minDelay: 2
-  maxDelay: 3
 --- !u!65 &6006647750176828816
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class SaveManager : MonoBehaviour
 {
@@ -8,8 +7,7 @@ public class SaveManager : MonoBehaviour
     [SerializeField]
     public GameObject playerPrefab;
 
-    [SerializeField]
-    private GameObject player;
+    public int bestScore;
     private void Awake()
     {
         if(Instance != null)
@@ -20,5 +18,30 @@ public class SaveManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    [System.Serializable]
+    class SaveData
+    {
+        public int bestScore;
+    }
+
+    public void SaveBestScore()
+    {
+        SaveData data = new SaveData();
+        data.bestScore = bestScore;
+        string json = JsonUtility.ToJson(data);
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
+
+    public void LoadBestScore()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+            bestScore = data.bestScore;
+        }
     }
 }

@@ -9,9 +9,9 @@ public class ScoreCounter : MonoBehaviour
 
     [SerializeField]
     private float stepDistance;
-    [SerializeField]
     private int _score;
     private int _scoreTemp;
+    private int _bestScore;
     private Vector3 _startPosition;
 
     public static UnityEvent Changed = new UnityEvent();
@@ -19,6 +19,7 @@ public class ScoreCounter : MonoBehaviour
     private void Start()
     {
         _startPosition = transform.position;
+        _bestScore = SaveManager.Instance.bestScore;
     }
 
     private void Update()
@@ -28,6 +29,11 @@ public class ScoreCounter : MonoBehaviour
         {
             _score = _scoreTemp;
             Changed.Invoke();
+            if (_score > _bestScore)
+            {
+                SaveManager.Instance.bestScore = _score;
+                SaveManager.Instance.SaveBestScore();
+            }
         }
     }
 

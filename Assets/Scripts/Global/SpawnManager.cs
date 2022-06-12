@@ -52,7 +52,7 @@ public class SpawnManager : MonoBehaviour
         for(int i = 0; i < lineCellLenght; i++)
         {
             //Go through each cell
-            Vector3 currentPoint = new Vector3(spawnPoint.x - lineCellLenght * step / 2 + i * 2, spawnPoint.y, spawnPoint.z);
+            Vector3 currentPoint = new Vector3(spawnPoint.x - lineCellLenght * step / 2 + i * 2, spawnPoint.y + 0.2f, spawnPoint.z); //0.2 used to avoid trouble with spawn
             if (Random.value < spawnObstacleChance)
             {
                 //Spawn obstacle

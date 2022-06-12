@@ -30,8 +30,8 @@ public class ScreenManager : MonoBehaviour
         EventManager.GamePaused.AddListener(EnablePauseScreen);
         EventManager.GameResumed.AddListener(DisablePauseScreen);
         EventManager.GameOver.AddListener(() => StartCoroutine(EnableGameOverScreen()));
-        EventManager.GameOver.AddListener(DisableHUD);
         EventManager.GameRestart.AddListener(() => StartCoroutine(RestartWithTransition()));
+        EventManager.GameRestart.AddListener(DisableHUD);
     }
 
     private IEnumerator EnableGameOverScreen()
@@ -70,8 +70,6 @@ public class ScreenManager : MonoBehaviour
         skinScreen?.SetActive(true);
         DisableAllScreens();
     }
-
-
 
     private void EnableHUD()
     {
