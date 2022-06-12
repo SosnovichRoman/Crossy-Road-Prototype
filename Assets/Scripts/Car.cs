@@ -26,9 +26,9 @@ public class Car : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.TryGetComponent<PlayerController>(out PlayerController playerController))
+        if(other.gameObject.TryGetComponent<Player>(out Player player))
         {
-            playerController.DestroyPlayer();
+            player.DestroyPlayer();
         }
     }
 

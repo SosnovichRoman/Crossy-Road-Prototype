@@ -261,6 +261,8 @@ GameObject:
   - component: {fileID: -3217685122891121083}
   - component: {fileID: -1231288583726285233}
   - component: {fileID: 7897857267087475460}
+  - component: {fileID: -4490992516081859348}
+  - component: {fileID: -2851618821846914023}
   m_Layer: 0
   m_Name: Truck_old
   m_TagString: Untagged
@@ -563,6 +565,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &-4490992516081859348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152970461968918238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.0719666, y: 3.0263107, z: 6.617841}
+  m_Center: {x: 1.0118741, y: 1.463255, z: 2.144373}
+--- !u!54 &-2851618821846914023
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152970461968918238}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &153001077229083470
 GameObject:
   m_ObjectHideFlags: 0

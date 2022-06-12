@@ -50,7 +50,6 @@ public class FollowPlayer : MonoBehaviour
 
     private void OnPlayerDeath()
     {
-        Debug.Log("started");
         StartCoroutine(ZoomOnTarget());
     }
 
