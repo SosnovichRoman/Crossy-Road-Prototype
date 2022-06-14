@@ -15,7 +15,6 @@ public class BestScoreText : MonoBehaviour
 
     private void Start()
     {
-        SaveManager.Instance.LoadBestScore();
         _bestScore = SaveManager.Instance.bestScore;
         _text.text = "Best Score: " + _bestScore;
         Debug.Log("st");

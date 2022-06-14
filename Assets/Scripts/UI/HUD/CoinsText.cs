@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class CoinsText : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private Wallet wallet;
 
     private int _coins = 0;
     private Text _text;
@@ -16,9 +17,14 @@ public class CoinsText : MonoBehaviour
         Wallet.Changed.AddListener(UpdateText);
     }
 
+    private void Start()
+    {
+        UpdateText();
+    }
+
     private void UpdateText()
     {
-        _coins++;
+        _coins = wallet.GetAmount();
         _text.text = "Coins: " + _coins;
     }
 

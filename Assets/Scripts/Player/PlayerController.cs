@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        SendGameStart();
+
         if (gameStarted)
         {
             //refactor TODO
@@ -47,6 +49,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Refactor ToDo
+    //Start game by clicking any playabe input
+    private void SendGameStart() 
+    {
+        if (!gameStarted)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow) ||
+            Input.GetKeyDown(KeyCode.RightArrow) ||
+            Input.GetKeyDown(KeyCode.DownArrow) ||
+            Input.GetKeyDown(KeyCode.LeftArrow))
+            EventManager.SendGameStart();
+        }
+
+    }
 
     //Smoothly move player in Direction if it's posible
     IEnumerator MoveInDirection(Vector3 direction)

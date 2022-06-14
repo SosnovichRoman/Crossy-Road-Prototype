@@ -26,6 +26,7 @@ public class ScreenManager : MonoBehaviour
     private void Awake()
     {
         EventManager.GameStarted.AddListener(() => StartCoroutine(StartWithTransition()));
+        EventManager.GameStarted.AddListener(DisableStartScreen);
         EventManager.GameStarted.AddListener(EnableHUD);
         EventManager.GamePaused.AddListener(EnablePauseScreen);
         EventManager.GameResumed.AddListener(DisablePauseScreen);
@@ -63,6 +64,11 @@ public class ScreenManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(restartDelay);
         }
         SceneManager.LoadScene("MainScene");
+    }
+
+    private void DisableStartScreen()
+    {
+        startScreen.SetActive(false);
     }
 
     public void EnableSkinScreen()

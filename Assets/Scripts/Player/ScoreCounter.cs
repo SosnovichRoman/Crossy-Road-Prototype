@@ -32,7 +32,7 @@ public class ScoreCounter : MonoBehaviour
             if (_score > _bestScore)
             {
                 SaveManager.Instance.bestScore = _score;
-                SaveManager.Instance.SaveBestScore();
+                SaveManager.Instance.Save();
             }
         }
     }

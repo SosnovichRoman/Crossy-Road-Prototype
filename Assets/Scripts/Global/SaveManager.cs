@@ -6,7 +6,10 @@ public class SaveManager : MonoBehaviour
     public static SaveManager Instance;
     [SerializeField]
     public GameObject playerPrefab;
+    [SerializeField]
+    private Wallet wallet;
 
+    public int coinsAmount;
     public int bestScore;
     private void Awake()
     {
@@ -18,6 +21,7 @@ public class SaveManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        Load();
     }
 
     [System.Serializable]
@@ -26,7 +30,7 @@ public class SaveManager : MonoBehaviour
         public int bestScore;
     }
 
-    public void SaveBestScore()
+    public void Save()
     {
         SaveData data = new SaveData();
         data.bestScore = bestScore;
@@ -34,7 +38,7 @@ public class SaveManager : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
 
-    public void LoadBestScore()
+    public void Load()
     {
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
