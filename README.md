@@ -23,6 +23,6 @@ ____
 ## Features
 + Unity Events
 + Skin system
-+ (SOLID)
++ Following the principles of SOLID
 + Data Persistence (Best Score, Coins)
-+ 
++ Automatically generated world
